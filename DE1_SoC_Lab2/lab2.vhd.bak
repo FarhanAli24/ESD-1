@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------
+-- Holly Dickens 
+-- 01/31/2021
+-- Lab 1 part 2 sample code 
+-- This example code demonstrates how to instantiate the NIOSII processor.
+-- **WARNING**: There are intentional bugs in this design. Be sure to review 
+-- entire file and fix mistakes before running on your board. 
+-------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+ENTITY lab2 is
+  port (
+
+end entity lab2;
+
+architecture rtl of lab2 is
+
+  
+  
+begin
+
+
+
+end architecture rtl;

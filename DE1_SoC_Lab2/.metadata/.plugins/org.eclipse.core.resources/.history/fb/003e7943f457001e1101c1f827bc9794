@@ -1,0 +1,129 @@
+# ---------------------------------------------------------------
+# Assembly language program that reads data from the switches
+# and displays it on the LEDs.
+# ---------------------------------------------------------------
+
+.text
+
+# define a macro to move a 32 bit address to a register
+
+.macro MOVIA reg, addr
+  movhi \reg, %hi(\addr)
+  ori \reg, \reg, %lo(\addr)
+.endm
+
+# define constants
+.equ Hex0, 0x11000    #base address of Hex0 in the system.h file
+.equ Sw0,  0x11020  #base address of Switches in the system.h file
+.equ Key1,  0x11010   #base address of Buttons in the system.h file
+.equ N, (Aend-Astart)/4
+
+#Define the main program
+.global main
+main:
+
+  movia r2, Hex0 #loading r2 with Hex0 address
+  movia r3, Sw0  #loading r3 with Sw0 address
+  movia r4, Key1  #loading r4 with Key address
+  movia r5, 0xd #this stores 1 to r5 to be used in a conditional statement
+
+  movia r6, Astart
+  movia r7, N
+  #r8 being used
+  #r9 being used
+  #r10 being used
+  #r11 being used to bitmask to KEY1
+  movia r12, 1
+  movia r13, 0xa5d4 #holdes 9
+  movia r14, 0xa5b0 #holdes 0
+  movia r15, 0x28 #40 in hex
+
+  ldw r11, 0(r4)
+
+  andi r11, r11, 0x002 #r11 is storing the bitmask of r4&0010 to use KEY1
+
+ldw r8, 0(r6)
+stbio r8, 0(r2) # store the value to the hex which is assigned to r2
+
+
+KEY:
+		beq r9,r12,DISPLAY_INC #if r9(switch) is on go to INCREMENT
+		bne r9,r5,DISPLAY_DEC #if r9(switch) is off go to DECREMENT
+		bne r11,r12,LOOP
+br KEY
+
+DISPLAY_INC:
+	ldbio r11, 0(r4) #load byte from Key1 and store into r11
+	bne r11,r5,ISMAX #Once Key is released check if value is at max
+br DISPLAY_INC
+
+DISPLAY_DEC:
+	ldbio r11, 0(r4) #load byte from Key1 and store into r11
+	bne r11,r5,ISMIN #Once Key is released check if value is at min
+br DISPLAY_DEC
+
+ISMAX:
+	bne r6,r13, INCREMENT #if not max increment
+	bgt r6,r13, RESET #when r6 > r13
+	bne r7,r0,LOOP #if r7 != 0 go back to loop
+br ISMAX
+
+RESET:
+	sub r6,r6, r15
+	bne r7,r0,LOOP #if r7 != 0 go back to loop
+br RESET
+
+ISMIN:
+	bne r6,r14, DECREMENT #if not min increment
+	bne r7,r0,LOOP #if r7 != 0 go back to loop
+br ISMIN
+
+INCREMENT:
+		addi r6,r6, 4    #incrementing by 4 bytes to r6 which has the array
+
+	 	ldw r8, 0(r6)    #storing array at beggining element from r6 to r8
+
+		stbio r8, 0(r2)  #store the value to the hex which is assigned to r2
+
+		bne r7,r0,LOOP #if r7 != 0 go back to loop
+br INCREMENT
+
+
+
+DECREMENT:
+	subi r6,r6, 4 	 #decrementing by 4 bytes to r6 which has the array
+	ldw r10, 0(r6)  #store r6(array) into r10 starting at last offset
+
+	stbio r10, 0(r2) #write to r2 which is hex0
+
+
+	bne r7,r0,LOOP #if r7 != 0 go back to loop
+br DECREMENT
+
+
+LOOP:
+	ldbio r9,0(r3) #load byte from Switch and store into r9
+	ldbio r11, 0(r4) #load byte from Key1 and store into r11
+
+	beq r11,r5,KEY
+	#beq r9,r5,INCREMENT #if r9(switche) is on go to COUNT
+
+
+	#subi r7,r7, 1    #decrementing r7 by 1
+	bne r7, r0, LOOP #go back to loop if r7 != 0
+STOP: br STOP
+
+	.data
+  Astart:
+	       #0     1     2      3     4     5     6     7     8    9
+	.word 0x040,0x079,0x024,0x030,0x019,0x012,0x002,0x078,0x000,0x010 #array that containts all the numbers in hex
+  Aend:
+	.end
+
+
+
+
+
+
+
+

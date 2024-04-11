@@ -1,0 +1,66 @@
+19:06:04 **** Incremental Build of configuration Nios II for project Lab6_Part5_APP ****
+make all 
+Info: Building ../Lab6_Part5_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part5_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part5.c to obj/default/Lab6_Part5.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part5_APP_bsp//HAL/inc -I../Lab6_Part5_APP_bsp/ -I../Lab6_Part5_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part5.o Lab6_Part5.c
+Lab6_Part5.c:19:18: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ uint8* bytePtr = (uint32*)RAMINFR_BE_0_BASE;
+                  ^
+Lab6_Part5.c:21:23: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ uint16* halfWordPtr = (uint32*)RAMINFR_BE_0_BASE;
+                       ^
+Lab6_Part5.c: In function 'ThirtyTwoBitTest':
+Lab6_Part5.c:49:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("Read: 0x%x\n", wordTest);
+            ^
+Lab6_Part5.c:49:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part5.c:50:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("Expected: 0x%x\n", word);
+            ^
+Lab6_Part5.c:50:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Info: Linking Lab6_Part5_APP.elf
+nios2-elf-g++  -T'../Lab6_Part5_APP_bsp//linker.x' -msys-crt0='../Lab6_Part5_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part5_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part5_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part5_APP.elf obj/default/Lab6_Part5.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part5_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1701203430 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "D:/ESD1/DE1_SoC_Lab6/Quartus/part1" --jdi ../..//output_files/lab6Part1.jdi --sopcinfo D:/ESD1/DE1_SoC_Lab6/Quartus/part1/software/Lab6_Part5_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part5_APP.elf) 8328 Bytes program size (code + initialized data).
+Info:                      7316 Bytes free for stack + heap.
+Info: Creating Lab6_Part5_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part5_APP.elf >Lab6_Part5_APP.objdump
+[Lab6_Part5_APP build complete]
+09:44:50 **** Build of configuration Nios II for project Lab6_Part5_APP ****
+make all 
+Info: Building ../Lab6_Part5_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part5_APP_bsp/
+[BSP build complete]
+Info: Compiling Lab6_Part5.c to obj/default/Lab6_Part5.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Lab6_Part5_APP_bsp//HAL/inc -I../Lab6_Part5_APP_bsp/ -I../Lab6_Part5_APP_bsp//drivers/inc  -pipe -D__hal__ -DALT_NO_C_PLUS_PLUS -DALT_NO_INSTRUCTION_EMULATION -DALT_USE_SMALL_DRIVERS -DSMALL_C_LIB -DALT_SINGLE_THREADED    -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o obj/default/Lab6_Part5.o Lab6_Part5.c
+Lab6_Part5.c:19:18: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ uint8* bytePtr = (uint32*)RAMINFR_BE_0_BASE;
+                  ^
+Lab6_Part5.c:21:23: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+ uint16* halfWordPtr = (uint32*)RAMINFR_BE_0_BASE;
+                       ^
+Lab6_Part5.c: In function 'ThirtyTwoBitTest':
+Lab6_Part5.c:49:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("Read: 0x%x\n", wordTest);
+            ^
+Lab6_Part5.c:49:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Lab6_Part5.c:50:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+     printf("Expected: 0x%x\n", word);
+            ^
+Lab6_Part5.c:50:12: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32 {aka long unsigned int}' [-Wformat=]
+Info: Linking Lab6_Part5_APP.elf
+nios2-elf-g++  -T'../Lab6_Part5_APP_bsp//linker.x' -msys-crt0='../Lab6_Part5_APP_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Lab6_Part5_APP_bsp/  -msmallc  -Wl,-Map=Lab6_Part5_APP.map   -O0 -g -Wall   -mno-hw-div -mno-hw-mul -mno-hw-mulx -mgpopt=global  -o Lab6_Part5_APP.elf obj/default/Lab6_Part5.o -lm -msys-lib=m
+nios2-elf-insert Lab6_Part5_APP.elf --thread_model hal --cpu_name nios2_gen2_0 --qsys true --simulation_enabled false --id 6 --sidp 0x9020 --timestamp 1701203430 --stderr_dev jtag_uart_0 --stdin_dev jtag_uart_0 --stdout_dev jtag_uart_0 --sopc_system_name nios_system --quartus_project_dir "D:/ESD1/DE1_SoC_Lab6/Quartus/part1" --jdi ../..//output_files/lab6Part1.jdi --sopcinfo D:/ESD1/DE1_SoC_Lab6/Quartus/part1/software/Lab6_Part5_APP_bsp/../../nios_system.sopcinfo
+Info: (Lab6_Part5_APP.elf) 8328 Bytes program size (code + initialized data).
+Info:                      7316 Bytes free for stack + heap.
+Info: Creating Lab6_Part5_APP.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Lab6_Part5_APP.elf >Lab6_Part5_APP.objdump
+[Lab6_Part5_APP build complete]
+09:45:01 **** Incremental Build of configuration Nios II for project Lab6_Part5_APP ****
+make all 
+Info: Building ../Lab6_Part5_APP_bsp/
+C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../Lab6_Part5_APP_bsp/
+[BSP build complete]
+[Lab6_Part5_APP build complete]

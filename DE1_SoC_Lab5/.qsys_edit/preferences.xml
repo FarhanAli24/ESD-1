@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
+   <description preferredWidth="239" />
+   <name preferredWidth="196" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Library,Project,Project/ESD1_IP" />
+ <window width="2582" height="1390" x="-6" y="51" />
+ <generation synthesis="VHDL" />
+</preferences>

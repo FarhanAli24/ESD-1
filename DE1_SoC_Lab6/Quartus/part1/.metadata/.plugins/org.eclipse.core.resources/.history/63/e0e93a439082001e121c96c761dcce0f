@@ -1,0 +1,107 @@
+#include "io.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_irq.h"
+
+// Create standard embedded type definitions
+typedef   signed char   sint8;              // signed 8 bit values
+typedef unsigned char   uint8;              // unsigned 8 bit values
+typedef   signed short  sint16;             // signed 16 bit values
+typedef unsigned short  uint16;             // unsigned 16 bit values
+typedef   signed long   sint32;             // signed 32 bit values
+typedef unsigned long   uint32;             // unsigned 32 bit values
+typedef         float   real32;             // 32 bit real values
+
+// Pointers for peripherals
+uint32*	LEDRPtr = (uint32*)LEDS_BASE;
+uint32* bytePtr = (uint32*)INFERRED_RAM_BASE;
+uint32* wordPtr = (uint32*)INFERRED_RAM_BASE;
+uint32* halfWordPtr = (uint32*)INFERRED_RAM_BASE;
+volatile uint32* KEYPtr = (uint32*)KEY1_BASE;
+//volatile uint32 address = 0;
+uint8 byteTest = 0;
+uint32 wordTest = 0;
+uint16 halfWordTest = 0;
+
+volatile uint32 byteSize;
+
+void eightBitTest(uint8 address, uint32 bytes_size, uint8 byte)//byte=8bits Test
+{
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size; i++)
+	{
+		*(bytePtr+i) = byte;
+		//RAMPtr += 1;
+	}
+
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size; i++)
+	{
+		byteTest = *(bytePtr+i);
+
+		if (byteTest != byte)
+		{
+			*LEDRPtr = 0xFFFF;
+		}
+	}
+	return;
+}
+
+void ThirtyTwoBitTest(uint32 address, uint32 bytes_size, uint32 word)//word=32bits
+{
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size/4; i++)
+	{
+		*(wordPtr+i) = word;
+		//RAMPtr += 1;
+	}
+
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size/4; i++)
+	{
+		wordTest = *(wordPtr+i);
+
+		if (wordTest != word)
+		{
+			*LEDRPtr = 0xFFFF;
+		}
+	}
+	return;
+}
+
+void SixteenBiteTest(uint16 address, uint16 bytes_size, uint16 halfWord)//word=32bits
+{
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size/2; i++)
+	{
+		*(halfWordPtr+i) = halfWord;
+		//RAMPtr += 1;
+	}
+
+	//RAMPtr = (uint8)address;
+	for(int i = address; i < bytes_size/2; i++)
+	{
+		wordTest = *(halfWordPtr+i);
+
+		if (wordTest != halfWord)
+		{
+			*LEDRPtr = 0xFFFF;
+		}
+	}
+	return;
+}
+
+
+int main (void)
+{
+	//*(KEYPtr + 2) = 0x02;
+	//alt_ic_isr_register(KEY1_IRQ_INTERRUPT_CONTROLLER_ID,KEY1_IRQ,key_isr,0,0);
+	while(1)
+		eightBitTest(0,0x4000,0xEF);
+		//ThirtyTwoBitTest(0,0x4000,0x12345678); //0x12345678
+		//(0,0x4000,0xABCD);
+
+	return(0);
+}

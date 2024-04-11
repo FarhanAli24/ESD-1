@@ -1,0 +1,113 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use ieee.numeric_std.all;
+
+
+ENTITY testBench is
+end entity testBench;
+
+
+
+architecture test of testBench is
+
+
+
+component lab4 is 
+	port (
+		 CLOCK_50           : in  std_logic;
+		 reset	           : in std_logic := '1';
+		 
+		 write_enable       : in std_logic;
+		 write_data         : in std_logic_vector(31 downto 0);
+		 
+		 address				  : in std_logic;
+		 
+		 irq					  : out std_logic;
+		 out_wave_export	  : out std_logic
+	 );
+end component;
+
+
+signal clk_sig 		   :std_logic := '0';
+signal reset_sig 		:std_logic := '1';
+
+signal write_enable_sig :std_logic := '0';										  
+signal write_data_sig   :std_logic_vector(31 downto 0) := (others=>'0');
+signal address_sig      :std_logic := '0';	
+signal irq              :std_logic := '0';
+signal out_wave_export  :std_logic := '0';
+
+constant period     : time := 20 ns;
+
+
+begin
+-- clock process
+clock: process
+  begin
+    clk_sig <= not clk_sig;
+    wait for period/2;
+end process;
+
+
+-- reset process
+async_reset: process
+  begin
+    wait for 2 * period;
+    reset_sig <= '0';
+
+end process; 
+
+verification: process
+begin
+
+	wait until (clk_sig = '1');
+
+---------------------Max-----------------------------------
+	wait until(clk_sig = '1');
+	reset_sig <= '0';
+	
+	wait until(irq = '1');
+	
+	write_enable_sig <= '1';
+	address_sig <= '1';
+
+	write_data_sig <= x"000186A0";   --max 135 degrees
+	
+
+-----------------------------------------------------------
+
+wait for 100 ns;
+
+---------------------Min-----------------------------------
+		
+
+	write_enable_sig <= '0';	
+	wait until(clk_sig = '1');
+	--write_data_sig <= x"0000C350"; --min 45 degrees
+
+
+
+
+-----------------------------------------------------------
+	wait for 100 ns;
+end process;
+
+
+
+UUT: lab4 port map(
+	 
+	 CLOCK_50         =>  clk_sig,
+	 reset	         =>  reset_sig,  
+	 
+	 write_enable     =>  write_enable_sig,  
+	 write_data       =>  write_data_sig,
+	 
+	 address		   	=>	 address_sig,
+	 
+	 irq					=> irq,
+	 out_wave_export	=> out_wave_export
+
+);
+
+end architecture test;

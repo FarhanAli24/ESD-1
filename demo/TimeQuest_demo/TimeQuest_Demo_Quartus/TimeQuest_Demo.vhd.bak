@@ -1,0 +1,23 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+
+
+ENTITY TimeQuest_Demo IS
+ PORT(
+
+ );
+END ENTITY TimeQuest_Demo;
+
+
+
+ARCHITECTURE rtl OF TimeQuest_Demo IS
+ 
+ 
+BEGIN
+ BEGIN
+ 
+ 
+ 
+ 
+END ARCHITECTURE rtl;

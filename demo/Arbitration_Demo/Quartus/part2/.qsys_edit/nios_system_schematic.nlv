@@ -1,0 +1,30 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst nios_system.nios2_gen2_0 -pg 1 -lvl 3 -y 460
+preplace inst nios_system.nios2_gen2_1 -pg 1 -lvl 2 -y 440
+preplace inst nios_system.jtag_uart_0 -pg 1 -lvl 4 -y 450
+preplace inst nios_system.nios2_gen2_0.clock_bridge -pg 1
+preplace inst nios_system.jtag_uart_1 -pg 1 -lvl 4 -y 150
+preplace inst nios_system -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst nios_system.onchip_memory2_0 -pg 1 -lvl 4 -y 550
+preplace inst nios_system.sysid_qsys_0 -pg 1 -lvl 4 -y 630
+preplace inst nios_system.onchip_memory2_1 -pg 1 -lvl 4 -y 250
+preplace inst nios_system.avalon_bridge0 -pg 1 -lvl 4 -y 330
+preplace inst nios_system.avalon_bridge1 -pg 1 -lvl 4 -y 30
+preplace inst nios_system.nios2_gen2_0.cpu -pg 1
+preplace inst nios_system.nios2_gen2_1.clock_bridge -pg 1
+preplace inst nios_system.nios2_gen2_1.cpu -pg 1
+preplace inst nios_system.nios2_gen2_0.reset_bridge -pg 1
+preplace inst nios_system.nios2_gen2_1.reset_bridge -pg 1
+preplace inst nios_system.clk_0 -pg 1 -lvl 1 -y 350
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.avalon_bridge0,(SLAVE)avalon_bridge0.external_interface) 1 0 4 NJ 340 NJ 340 NJ 380 NJ
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(MASTER)clk_0.clk,(SLAVE)nios2_gen2_0.clk,(SLAVE)nios2_gen2_1.clk,(SLAVE)onchip_memory2_0.clk1,(SLAVE)avalon_bridge0.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)jtag_uart_1.clk,(SLAVE)sysid_qsys_0.clk,(SLAVE)avalon_bridge1.clk,(SLAVE)onchip_memory2_1.clk1) 1 1 3 330 360 790 360 1230
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)nios2_gen2_0.instruction_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)avalon_bridge1.avalon_slave,(SLAVE)nios2_gen2_1.debug_mem_slave,(SLAVE)jtag_uart_1.avalon_jtag_slave,(SLAVE)nios2_gen2_0.debug_mem_slave,(MASTER)nios2_gen2_0.data_master,(SLAVE)avalon_bridge0.avalon_slave,(SLAVE)onchip_memory2_1.s1,(MASTER)nios2_gen2_1.instruction_master,(MASTER)nios2_gen2_1.data_master,(SLAVE)sysid_qsys_0.control_slave) 1 1 3 350 400 770 340 1170
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)avalon_bridge1.external_interface,(SLAVE)nios_system.avalon_bridge1) 1 0 4 NJ 80 NJ 80 NJ 80 NJ
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)jtag_uart_1.irq,(SLAVE)avalon_bridge1.interrupt,(MASTER)nios2_gen2_1.irq) 1 2 2 NJ 420 1150
+preplace netloc FAN_OUT<net_container>nios_system</net_container>(SLAVE)jtag_uart_0.irq,(MASTER)nios2_gen2_0.irq,(SLAVE)avalon_bridge0.interrupt) 1 3 1 1210
+preplace netloc EXPORT<net_container>nios_system</net_container>(SLAVE)nios_system.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc INTERCONNECT<net_container>nios_system</net_container>(SLAVE)onchip_memory2_1.reset1,(SLAVE)avalon_bridge0.reset,(SLAVE)sysid_qsys_0.reset,(SLAVE)jtag_uart_1.reset,(SLAVE)onchip_memory2_0.reset1,(MASTER)nios2_gen2_1.debug_reset_request,(SLAVE)nios2_gen2_0.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)avalon_bridge1.reset,(SLAVE)nios2_gen2_1.reset,(MASTER)clk_0.clk_reset,(MASTER)nios2_gen2_0.debug_reset_request) 1 1 3 310 380 730 400 1190
+levelinfo -pg 1 0 100 1440
+levelinfo -hier nios_system 110 140 470 910 1280 1430

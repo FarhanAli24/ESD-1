@@ -1,0 +1,637 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+--A1L19 is Add0~1
+A1L19_adder_eqn = ( qA[0] ) + ( qB[0] ) + ( !VCC );
+A1L19 = SUM(A1L19_adder_eqn);
+
+--A1L20 is Add0~2
+A1L20_adder_eqn = ( qA[0] ) + ( qB[0] ) + ( !VCC );
+A1L20 = CARRY(A1L20_adder_eqn);
+
+
+--A1L23 is Add0~5
+A1L23_adder_eqn = ( qA[1] ) + ( qB[1] ) + ( A1L20 );
+A1L23 = SUM(A1L23_adder_eqn);
+
+--A1L24 is Add0~6
+A1L24_adder_eqn = ( qA[1] ) + ( qB[1] ) + ( A1L20 );
+A1L24 = CARRY(A1L24_adder_eqn);
+
+
+--A1L27 is Add0~9
+A1L27_adder_eqn = ( qA[2] ) + ( qB[2] ) + ( A1L24 );
+A1L27 = SUM(A1L27_adder_eqn);
+
+--A1L28 is Add0~10
+A1L28_adder_eqn = ( qA[2] ) + ( qB[2] ) + ( A1L24 );
+A1L28 = CARRY(A1L28_adder_eqn);
+
+
+--A1L31 is Add0~13
+A1L31_adder_eqn = ( qA[3] ) + ( qB[3] ) + ( A1L28 );
+A1L31 = SUM(A1L31_adder_eqn);
+
+--A1L32 is Add0~14
+A1L32_adder_eqn = ( qA[3] ) + ( qB[3] ) + ( A1L28 );
+A1L32 = CARRY(A1L32_adder_eqn);
+
+
+--A1L35 is Add0~17
+A1L35_adder_eqn = ( qA[4] ) + ( qB[4] ) + ( A1L32 );
+A1L35 = SUM(A1L35_adder_eqn);
+
+--A1L36 is Add0~18
+A1L36_adder_eqn = ( qA[4] ) + ( qB[4] ) + ( A1L32 );
+A1L36 = CARRY(A1L36_adder_eqn);
+
+
+--A1L39 is Add0~21
+A1L39_adder_eqn = ( qA[5] ) + ( qB[5] ) + ( A1L36 );
+A1L39 = SUM(A1L39_adder_eqn);
+
+--A1L40 is Add0~22
+A1L40_adder_eqn = ( qA[5] ) + ( qB[5] ) + ( A1L36 );
+A1L40 = CARRY(A1L40_adder_eqn);
+
+
+--A1L43 is Add0~25
+A1L43_adder_eqn = ( qA[6] ) + ( qB[6] ) + ( A1L40 );
+A1L43 = SUM(A1L43_adder_eqn);
+
+--A1L44 is Add0~26
+A1L44_adder_eqn = ( qA[6] ) + ( qB[6] ) + ( A1L40 );
+A1L44 = CARRY(A1L44_adder_eqn);
+
+
+--A1L47 is Add0~29
+A1L47_adder_eqn = ( qA[7] ) + ( qB[7] ) + ( A1L44 );
+A1L47 = SUM(A1L47_adder_eqn);
+
+--A1L48 is Add0~30
+A1L48_adder_eqn = ( qA[7] ) + ( qB[7] ) + ( A1L44 );
+A1L48 = CARRY(A1L48_adder_eqn);
+
+
+--A1L51 is Add0~33
+A1L51_adder_eqn = ( qA[8] ) + ( qB[8] ) + ( A1L48 );
+A1L51 = SUM(A1L51_adder_eqn);
+
+--A1L52 is Add0~34
+A1L52_adder_eqn = ( qA[8] ) + ( qB[8] ) + ( A1L48 );
+A1L52 = CARRY(A1L52_adder_eqn);
+
+
+--A1L55 is Add0~37
+A1L55_adder_eqn = ( qA[9] ) + ( qB[9] ) + ( A1L52 );
+A1L55 = SUM(A1L55_adder_eqn);
+
+--A1L56 is Add0~38
+A1L56_adder_eqn = ( qA[9] ) + ( qB[9] ) + ( A1L52 );
+A1L56 = CARRY(A1L56_adder_eqn);
+
+
+--A1L59 is Add0~41
+A1L59_adder_eqn = ( qA[10] ) + ( qB[10] ) + ( A1L56 );
+A1L59 = SUM(A1L59_adder_eqn);
+
+--A1L60 is Add0~42
+A1L60_adder_eqn = ( qA[10] ) + ( qB[10] ) + ( A1L56 );
+A1L60 = CARRY(A1L60_adder_eqn);
+
+
+--A1L63 is Add0~45
+A1L63_adder_eqn = ( qA[11] ) + ( qB[11] ) + ( A1L60 );
+A1L63 = SUM(A1L63_adder_eqn);
+
+--A1L64 is Add0~46
+A1L64_adder_eqn = ( qA[11] ) + ( qB[11] ) + ( A1L60 );
+A1L64 = CARRY(A1L64_adder_eqn);
+
+
+--A1L67 is Add0~49
+A1L67_adder_eqn = ( qA[12] ) + ( qB[12] ) + ( A1L64 );
+A1L67 = SUM(A1L67_adder_eqn);
+
+--A1L68 is Add0~50
+A1L68_adder_eqn = ( qA[12] ) + ( qB[12] ) + ( A1L64 );
+A1L68 = CARRY(A1L68_adder_eqn);
+
+
+--A1L71 is Add0~53
+A1L71_adder_eqn = ( qA[13] ) + ( qB[13] ) + ( A1L68 );
+A1L71 = SUM(A1L71_adder_eqn);
+
+--A1L72 is Add0~54
+A1L72_adder_eqn = ( qA[13] ) + ( qB[13] ) + ( A1L68 );
+A1L72 = CARRY(A1L72_adder_eqn);
+
+
+--A1L75 is Add0~57
+A1L75_adder_eqn = ( qA[14] ) + ( qB[14] ) + ( A1L72 );
+A1L75 = SUM(A1L75_adder_eqn);
+
+--A1L76 is Add0~58
+A1L76_adder_eqn = ( qA[14] ) + ( qB[14] ) + ( A1L72 );
+A1L76 = CARRY(A1L76_adder_eqn);
+
+
+--A1L79 is Add0~61
+A1L79_adder_eqn = ( qA[15] ) + ( qB[15] ) + ( A1L76 );
+A1L79 = SUM(A1L79_adder_eqn);
+
+
+--result[0] is result[0]
+result[0] = OUTPUT(result_sig[0]);
+
+
+--result[1] is result[1]
+result[1] = OUTPUT(result_sig[1]);
+
+
+--result[2] is result[2]
+result[2] = OUTPUT(result_sig[2]);
+
+
+--result[3] is result[3]
+result[3] = OUTPUT(result_sig[3]);
+
+
+--result[4] is result[4]
+result[4] = OUTPUT(result_sig[4]);
+
+
+--result[5] is result[5]
+result[5] = OUTPUT(result_sig[5]);
+
+
+--result[6] is result[6]
+result[6] = OUTPUT(result_sig[6]);
+
+
+--result[7] is result[7]
+result[7] = OUTPUT(result_sig[7]);
+
+
+--result[8] is result[8]
+result[8] = OUTPUT(result_sig[8]);
+
+
+--result[9] is result[9]
+result[9] = OUTPUT(result_sig[9]);
+
+
+--result[10] is result[10]
+result[10] = OUTPUT(result_sig[10]);
+
+
+--result[11] is result[11]
+result[11] = OUTPUT(result_sig[11]);
+
+
+--result[12] is result[12]
+result[12] = OUTPUT(result_sig[12]);
+
+
+--result[13] is result[13]
+result[13] = OUTPUT(result_sig[13]);
+
+
+--result[14] is result[14]
+result[14] = OUTPUT(result_sig[14]);
+
+
+--result[15] is result[15]
+result[15] = OUTPUT(result_sig[15]);
+
+
+--result_sig[0] is result_sig[0]
+--register power-up is low
+
+result_sig[0] = DFFEAS(A1L19, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[1] is result_sig[1]
+--register power-up is low
+
+result_sig[1] = DFFEAS(A1L23, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[2] is result_sig[2]
+--register power-up is low
+
+result_sig[2] = DFFEAS(A1L27, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[3] is result_sig[3]
+--register power-up is low
+
+result_sig[3] = DFFEAS(A1L31, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[4] is result_sig[4]
+--register power-up is low
+
+result_sig[4] = DFFEAS(A1L35, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[5] is result_sig[5]
+--register power-up is low
+
+result_sig[5] = DFFEAS(A1L39, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[6] is result_sig[6]
+--register power-up is low
+
+result_sig[6] = DFFEAS(A1L43, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[7] is result_sig[7]
+--register power-up is low
+
+result_sig[7] = DFFEAS(A1L47, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[8] is result_sig[8]
+--register power-up is low
+
+result_sig[8] = DFFEAS(A1L51, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[9] is result_sig[9]
+--register power-up is low
+
+result_sig[9] = DFFEAS(A1L55, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[10] is result_sig[10]
+--register power-up is low
+
+result_sig[10] = DFFEAS(A1L59, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[11] is result_sig[11]
+--register power-up is low
+
+result_sig[11] = DFFEAS(A1L63, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[12] is result_sig[12]
+--register power-up is low
+
+result_sig[12] = DFFEAS(A1L67, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[13] is result_sig[13]
+--register power-up is low
+
+result_sig[13] = DFFEAS(A1L71, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[14] is result_sig[14]
+--register power-up is low
+
+result_sig[14] = DFFEAS(A1L75, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[15] is result_sig[15]
+--register power-up is low
+
+result_sig[15] = DFFEAS(A1L79, CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--CLOCK is CLOCK
+CLOCK = INPUT();
+
+
+--qA[0] is qA[0]
+--register power-up is low
+
+qA[0] = DFFEAS(A[0], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[0] is qB[0]
+--register power-up is low
+
+qB[0] = DFFEAS(b[0], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[1] is qA[1]
+--register power-up is low
+
+qA[1] = DFFEAS(A[1], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[1] is qB[1]
+--register power-up is low
+
+qB[1] = DFFEAS(b[1], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[2] is qA[2]
+--register power-up is low
+
+qA[2] = DFFEAS(A[2], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[2] is qB[2]
+--register power-up is low
+
+qB[2] = DFFEAS(b[2], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[3] is qA[3]
+--register power-up is low
+
+qA[3] = DFFEAS(A[3], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[3] is qB[3]
+--register power-up is low
+
+qB[3] = DFFEAS(b[3], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[4] is qA[4]
+--register power-up is low
+
+qA[4] = DFFEAS(A[4], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[4] is qB[4]
+--register power-up is low
+
+qB[4] = DFFEAS(b[4], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[5] is qA[5]
+--register power-up is low
+
+qA[5] = DFFEAS(A[5], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[5] is qB[5]
+--register power-up is low
+
+qB[5] = DFFEAS(b[5], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[6] is qA[6]
+--register power-up is low
+
+qA[6] = DFFEAS(A[6], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[6] is qB[6]
+--register power-up is low
+
+qB[6] = DFFEAS(b[6], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[7] is qA[7]
+--register power-up is low
+
+qA[7] = DFFEAS(A[7], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[7] is qB[7]
+--register power-up is low
+
+qB[7] = DFFEAS(b[7], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[8] is qA[8]
+--register power-up is low
+
+qA[8] = DFFEAS(A[8], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[8] is qB[8]
+--register power-up is low
+
+qB[8] = DFFEAS(b[8], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[9] is qA[9]
+--register power-up is low
+
+qA[9] = DFFEAS(A[9], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[9] is qB[9]
+--register power-up is low
+
+qB[9] = DFFEAS(b[9], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[10] is qA[10]
+--register power-up is low
+
+qA[10] = DFFEAS(A[10], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[10] is qB[10]
+--register power-up is low
+
+qB[10] = DFFEAS(b[10], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[11] is qA[11]
+--register power-up is low
+
+qA[11] = DFFEAS(A[11], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[11] is qB[11]
+--register power-up is low
+
+qB[11] = DFFEAS(b[11], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[12] is qA[12]
+--register power-up is low
+
+qA[12] = DFFEAS(A[12], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[12] is qB[12]
+--register power-up is low
+
+qB[12] = DFFEAS(b[12], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[13] is qA[13]
+--register power-up is low
+
+qA[13] = DFFEAS(A[13], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[13] is qB[13]
+--register power-up is low
+
+qB[13] = DFFEAS(b[13], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[14] is qA[14]
+--register power-up is low
+
+qA[14] = DFFEAS(A[14], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[14] is qB[14]
+--register power-up is low
+
+qB[14] = DFFEAS(b[14], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[15] is qA[15]
+--register power-up is low
+
+qA[15] = DFFEAS(A[15], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[15] is qB[15]
+--register power-up is low
+
+qB[15] = DFFEAS(b[15], CLOCK,  ,  ,  ,  ,  ,  ,  );
+
+
+--A[0] is A[0]
+A[0] = INPUT();
+
+
+--b[0] is b[0]
+b[0] = INPUT();
+
+
+--A[1] is A[1]
+A[1] = INPUT();
+
+
+--b[1] is b[1]
+b[1] = INPUT();
+
+
+--A[2] is A[2]
+A[2] = INPUT();
+
+
+--b[2] is b[2]
+b[2] = INPUT();
+
+
+--A[3] is A[3]
+A[3] = INPUT();
+
+
+--b[3] is b[3]
+b[3] = INPUT();
+
+
+--A[4] is A[4]
+A[4] = INPUT();
+
+
+--b[4] is b[4]
+b[4] = INPUT();
+
+
+--A[5] is A[5]
+A[5] = INPUT();
+
+
+--b[5] is b[5]
+b[5] = INPUT();
+
+
+--A[6] is A[6]
+A[6] = INPUT();
+
+
+--b[6] is b[6]
+b[6] = INPUT();
+
+
+--A[7] is A[7]
+A[7] = INPUT();
+
+
+--b[7] is b[7]
+b[7] = INPUT();
+
+
+--A[8] is A[8]
+A[8] = INPUT();
+
+
+--b[8] is b[8]
+b[8] = INPUT();
+
+
+--A[9] is A[9]
+A[9] = INPUT();
+
+
+--b[9] is b[9]
+b[9] = INPUT();
+
+
+--A[10] is A[10]
+A[10] = INPUT();
+
+
+--b[10] is b[10]
+b[10] = INPUT();
+
+
+--A[11] is A[11]
+A[11] = INPUT();
+
+
+--b[11] is b[11]
+b[11] = INPUT();
+
+
+--A[12] is A[12]
+A[12] = INPUT();
+
+
+--b[12] is b[12]
+b[12] = INPUT();
+
+
+--A[13] is A[13]
+A[13] = INPUT();
+
+
+--b[13] is b[13]
+b[13] = INPUT();
+
+
+--A[14] is A[14]
+A[14] = INPUT();
+
+
+--b[14] is b[14]
+b[14] = INPUT();
+
+
+--A[15] is A[15]
+A[15] = INPUT();
+
+
+--b[15] is b[15]
+b[15] = INPUT();
+
+

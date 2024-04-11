@@ -1,0 +1,898 @@
+-- Copyright (C) 2018  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files from any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Intel Program License 
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel FPGA IP License Agreement, or other applicable license
+-- agreement, including, without limitation, that your use is for
+-- the sole purpose of programming logic devices manufactured by
+-- Intel and sold by Intel or its authorized distributors.  Please
+-- refer to the applicable agreement for further details.
+--A1L35 is Add0~1 at LABCELL_X12_Y4_N0
+A1L35_adder_eqn = ( qA[0] ) + ( qB[0] ) + ( !VCC );
+A1L35 = SUM(A1L35_adder_eqn);
+
+--A1L36 is Add0~2 at LABCELL_X12_Y4_N0
+A1L36_adder_eqn = ( qA[0] ) + ( qB[0] ) + ( !VCC );
+A1L36 = CARRY(A1L36_adder_eqn);
+
+
+--A1L39 is Add0~5 at LABCELL_X12_Y4_N3
+A1L39_adder_eqn = ( qA[1] ) + ( qB[1] ) + ( A1L36 );
+A1L39 = SUM(A1L39_adder_eqn);
+
+--A1L40 is Add0~6 at LABCELL_X12_Y4_N3
+A1L40_adder_eqn = ( qA[1] ) + ( qB[1] ) + ( A1L36 );
+A1L40 = CARRY(A1L40_adder_eqn);
+
+
+--A1L43 is Add0~9 at LABCELL_X12_Y4_N6
+A1L43_adder_eqn = ( qA[2] ) + ( qB[2] ) + ( A1L40 );
+A1L43 = SUM(A1L43_adder_eqn);
+
+--A1L44 is Add0~10 at LABCELL_X12_Y4_N6
+A1L44_adder_eqn = ( qA[2] ) + ( qB[2] ) + ( A1L40 );
+A1L44 = CARRY(A1L44_adder_eqn);
+
+
+--A1L47 is Add0~13 at LABCELL_X12_Y4_N9
+A1L47_adder_eqn = ( qA[3] ) + ( qB[3] ) + ( A1L44 );
+A1L47 = SUM(A1L47_adder_eqn);
+
+--A1L48 is Add0~14 at LABCELL_X12_Y4_N9
+A1L48_adder_eqn = ( qA[3] ) + ( qB[3] ) + ( A1L44 );
+A1L48 = CARRY(A1L48_adder_eqn);
+
+
+--A1L51 is Add0~17 at LABCELL_X12_Y4_N12
+A1L51_adder_eqn = ( qB[4] ) + ( qA[4] ) + ( A1L48 );
+A1L51 = SUM(A1L51_adder_eqn);
+
+--A1L52 is Add0~18 at LABCELL_X12_Y4_N12
+A1L52_adder_eqn = ( qB[4] ) + ( qA[4] ) + ( A1L48 );
+A1L52 = CARRY(A1L52_adder_eqn);
+
+
+--A1L55 is Add0~21 at LABCELL_X12_Y4_N15
+A1L55_adder_eqn = ( qA[5] ) + ( qB[5] ) + ( A1L52 );
+A1L55 = SUM(A1L55_adder_eqn);
+
+--A1L56 is Add0~22 at LABCELL_X12_Y4_N15
+A1L56_adder_eqn = ( qA[5] ) + ( qB[5] ) + ( A1L52 );
+A1L56 = CARRY(A1L56_adder_eqn);
+
+
+--A1L59 is Add0~25 at LABCELL_X12_Y4_N18
+A1L59_adder_eqn = ( qB[6] ) + ( qA[6] ) + ( A1L56 );
+A1L59 = SUM(A1L59_adder_eqn);
+
+--A1L60 is Add0~26 at LABCELL_X12_Y4_N18
+A1L60_adder_eqn = ( qB[6] ) + ( qA[6] ) + ( A1L56 );
+A1L60 = CARRY(A1L60_adder_eqn);
+
+
+--A1L63 is Add0~29 at LABCELL_X12_Y4_N21
+A1L63_adder_eqn = ( qB[7] ) + ( qA[7] ) + ( A1L60 );
+A1L63 = SUM(A1L63_adder_eqn);
+
+--A1L64 is Add0~30 at LABCELL_X12_Y4_N21
+A1L64_adder_eqn = ( qB[7] ) + ( qA[7] ) + ( A1L60 );
+A1L64 = CARRY(A1L64_adder_eqn);
+
+
+--A1L67 is Add0~33 at LABCELL_X12_Y4_N24
+A1L67_adder_eqn = ( qB[8] ) + ( qA[8] ) + ( A1L64 );
+A1L67 = SUM(A1L67_adder_eqn);
+
+--A1L68 is Add0~34 at LABCELL_X12_Y4_N24
+A1L68_adder_eqn = ( qB[8] ) + ( qA[8] ) + ( A1L64 );
+A1L68 = CARRY(A1L68_adder_eqn);
+
+
+--A1L71 is Add0~37 at LABCELL_X12_Y4_N27
+A1L71_adder_eqn = ( qA[9] ) + ( qB[9] ) + ( A1L68 );
+A1L71 = SUM(A1L71_adder_eqn);
+
+--A1L72 is Add0~38 at LABCELL_X12_Y4_N27
+A1L72_adder_eqn = ( qA[9] ) + ( qB[9] ) + ( A1L68 );
+A1L72 = CARRY(A1L72_adder_eqn);
+
+
+--A1L75 is Add0~41 at LABCELL_X12_Y4_N30
+A1L75_adder_eqn = ( qB[10] ) + ( qA[10] ) + ( A1L72 );
+A1L75 = SUM(A1L75_adder_eqn);
+
+--A1L76 is Add0~42 at LABCELL_X12_Y4_N30
+A1L76_adder_eqn = ( qB[10] ) + ( qA[10] ) + ( A1L72 );
+A1L76 = CARRY(A1L76_adder_eqn);
+
+
+--A1L79 is Add0~45 at LABCELL_X12_Y4_N33
+A1L79_adder_eqn = ( qB[11] ) + ( qA[11] ) + ( A1L76 );
+A1L79 = SUM(A1L79_adder_eqn);
+
+--A1L80 is Add0~46 at LABCELL_X12_Y4_N33
+A1L80_adder_eqn = ( qB[11] ) + ( qA[11] ) + ( A1L76 );
+A1L80 = CARRY(A1L80_adder_eqn);
+
+
+--A1L83 is Add0~49 at LABCELL_X12_Y4_N36
+A1L83_adder_eqn = ( qA[12] ) + ( qB[12] ) + ( A1L80 );
+A1L83 = SUM(A1L83_adder_eqn);
+
+--A1L84 is Add0~50 at LABCELL_X12_Y4_N36
+A1L84_adder_eqn = ( qA[12] ) + ( qB[12] ) + ( A1L80 );
+A1L84 = CARRY(A1L84_adder_eqn);
+
+
+--A1L87 is Add0~53 at LABCELL_X12_Y4_N39
+A1L87_adder_eqn = ( qB[13] ) + ( qA[13] ) + ( A1L84 );
+A1L87 = SUM(A1L87_adder_eqn);
+
+--A1L88 is Add0~54 at LABCELL_X12_Y4_N39
+A1L88_adder_eqn = ( qB[13] ) + ( qA[13] ) + ( A1L84 );
+A1L88 = CARRY(A1L88_adder_eqn);
+
+
+--A1L91 is Add0~57 at LABCELL_X12_Y4_N42
+A1L91_adder_eqn = ( qB[14] ) + ( qA[14] ) + ( A1L88 );
+A1L91 = SUM(A1L91_adder_eqn);
+
+--A1L92 is Add0~58 at LABCELL_X12_Y4_N42
+A1L92_adder_eqn = ( qB[14] ) + ( qA[14] ) + ( A1L88 );
+A1L92 = CARRY(A1L92_adder_eqn);
+
+
+--A1L95 is Add0~61 at LABCELL_X12_Y4_N45
+A1L95_adder_eqn = ( qA[15] ) + ( qB[15] ) + ( A1L92 );
+A1L95 = SUM(A1L95_adder_eqn);
+
+
+--result_sig[0] is result_sig[0] at FF_X12_Y4_N1
+--register power-up is low
+
+result_sig[0] = DFFEAS(A1L35, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[1] is result_sig[1] at FF_X12_Y4_N4
+--register power-up is low
+
+result_sig[1] = DFFEAS(A1L39, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[2] is result_sig[2] at FF_X12_Y4_N7
+--register power-up is low
+
+result_sig[2] = DFFEAS(A1L43, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[3] is result_sig[3] at FF_X12_Y4_N10
+--register power-up is low
+
+result_sig[3] = DFFEAS(A1L47, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[4] is result_sig[4] at FF_X12_Y4_N13
+--register power-up is low
+
+result_sig[4] = DFFEAS(A1L51, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[5] is result_sig[5] at FF_X12_Y4_N16
+--register power-up is low
+
+result_sig[5] = DFFEAS(A1L55, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[6] is result_sig[6] at FF_X12_Y4_N19
+--register power-up is low
+
+result_sig[6] = DFFEAS(A1L59, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[7] is result_sig[7] at FF_X12_Y4_N22
+--register power-up is low
+
+result_sig[7] = DFFEAS(A1L63, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[8] is result_sig[8] at FF_X12_Y4_N25
+--register power-up is low
+
+result_sig[8] = DFFEAS(A1L67, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[9] is result_sig[9] at FF_X12_Y4_N28
+--register power-up is low
+
+result_sig[9] = DFFEAS(A1L71, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[10] is result_sig[10] at FF_X12_Y4_N31
+--register power-up is low
+
+result_sig[10] = DFFEAS(A1L75, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[11] is result_sig[11] at FF_X12_Y4_N35
+--register power-up is low
+
+result_sig[11] = DFFEAS(A1L79, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[12] is result_sig[12] at FF_X12_Y4_N37
+--register power-up is low
+
+result_sig[12] = DFFEAS(A1L83, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[13] is result_sig[13] at FF_X12_Y4_N40
+--register power-up is low
+
+result_sig[13] = DFFEAS(A1L87, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[14] is result_sig[14] at FF_X12_Y4_N43
+--register power-up is low
+
+result_sig[14] = DFFEAS(A1L91, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--result_sig[15] is result_sig[15] at FF_X12_Y4_N46
+--register power-up is low
+
+result_sig[15] = DFFEAS(A1L95, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[0] is qA[0] at FF_X11_Y4_N58
+--register power-up is low
+
+qA[0] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L3,  ,  , VCC);
+
+
+--qB[0] is qB[0] at FF_X12_Y4_N50
+--register power-up is low
+
+qB[0] = DFFEAS(A1L161, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[1] is qA[1] at FF_X13_Y4_N11
+--register power-up is low
+
+qA[1] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L5,  ,  , VCC);
+
+
+--qB[1] is qB[1] at FF_X12_Y4_N59
+--register power-up is low
+
+qB[1] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L103,  ,  , VCC);
+
+
+--qA[2] is qA[2] at FF_X13_Y4_N2
+--register power-up is low
+
+qA[2] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L7,  ,  , VCC);
+
+
+--qB[2] is qB[2] at FF_X12_Y4_N53
+--register power-up is low
+
+qB[2] = DFFEAS(A1L164, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[3] is qA[3] at FF_X13_Y4_N23
+--register power-up is low
+
+qA[3] = DFFEAS(A1L140, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[3] is qB[3] at FF_X12_Y4_N56
+--register power-up is low
+
+qB[3] = DFFEAS(A1L166, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[4] is qA[4] at FF_X11_Y4_N7
+--register power-up is low
+
+qA[4] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L11,  ,  , VCC);
+
+
+--qB[4] is qB[4] at FF_X11_Y4_N28
+--register power-up is low
+
+qB[4] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L109,  ,  , VCC);
+
+
+--qA[5] is qA[5] at FF_X13_Y4_N29
+--register power-up is low
+
+qA[5] = DFFEAS(A1L143, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[5] is qB[5] at FF_X13_Y4_N44
+--register power-up is low
+
+qB[5] = DFFEAS(A1L169, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[6] is qA[6] at FF_X11_Y4_N37
+--register power-up is low
+
+qA[6] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L15,  ,  , VCC);
+
+
+--qB[6] is qB[6] at FF_X11_Y4_N34
+--register power-up is low
+
+qB[6] = DFFEAS(A1L171, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[7] is qA[7] at FF_X13_Y4_N38
+--register power-up is low
+
+qA[7] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L17,  ,  , VCC);
+
+
+--qB[7] is qB[7] at FF_X11_Y4_N43
+--register power-up is low
+
+qB[7] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L115,  ,  , VCC);
+
+
+--qA[8] is qA[8] at FF_X13_Y4_N32
+--register power-up is low
+
+qA[8] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L19,  ,  , VCC);
+
+
+--qB[8] is qB[8] at FF_X13_Y4_N56
+--register power-up is low
+
+qB[8] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L117,  ,  , VCC);
+
+
+--qA[9] is qA[9] at FF_X13_Y4_N5
+--register power-up is low
+
+qA[9] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L21,  ,  , VCC);
+
+
+--qB[9] is qB[9] at FF_X11_Y4_N4
+--register power-up is low
+
+qB[9] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L119,  ,  , VCC);
+
+
+--qA[10] is qA[10] at FF_X13_Y4_N41
+--register power-up is low
+
+qA[10] = DFFEAS(A1L149, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[10] is qB[10] at FF_X13_Y4_N17
+--register power-up is low
+
+qB[10] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L121,  ,  , VCC);
+
+
+--qA[11] is qA[11] at FF_X13_Y4_N59
+--register power-up is low
+
+qA[11] = DFFEAS(A1L151, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[11] is qB[11] at FF_X11_Y4_N13
+--register power-up is low
+
+qB[11] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L123,  ,  , VCC);
+
+
+--qA[12] is qA[12] at FF_X13_Y4_N13
+--register power-up is low
+
+qA[12] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L27,  ,  , VCC);
+
+
+--qB[12] is qB[12] at FF_X13_Y4_N53
+--register power-up is low
+
+qB[12] = DFFEAS(A1L178, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[13] is qA[13] at FF_X13_Y2_N17
+--register power-up is low
+
+qA[13] = DFFEAS(A1L154, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[13] is qB[13] at FF_X11_Y4_N49
+--register power-up is low
+
+qB[13] = DFFEAS( , GLOBAL(A1L134),  ,  ,  , A1L127,  ,  , VCC);
+
+
+--qA[14] is qA[14] at FF_X13_Y4_N25
+--register power-up is low
+
+qA[14] = DFFEAS(A1L156, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[14] is qB[14] at FF_X13_Y4_N50
+--register power-up is low
+
+qB[14] = DFFEAS(A1L181, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qA[15] is qA[15] at FF_X11_Y4_N22
+--register power-up is low
+
+qA[15] = DFFEAS(A1L158, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--qB[15] is qB[15] at FF_X17_Y4_N13
+--register power-up is low
+
+qB[15] = DFFEAS(A1L183, GLOBAL(A1L134),  ,  ,  ,  ,  ,  ,  );
+
+
+--A1L186 is result[0]~output at IOOBUF_X28_Y0_N2
+A1L186 = OUTPUT_BUFFER.O(.I(result_sig[0]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[0] is result[0] at PIN_AB15
+result[0] = OUTPUT();
+
+
+--A1L188 is result[1]~output at IOOBUF_X18_Y0_N59
+A1L188 = OUTPUT_BUFFER.O(.I(result_sig[1]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[1] is result[1] at PIN_AG11
+result[1] = OUTPUT();
+
+
+--A1L190 is result[2]~output at IOOBUF_X6_Y0_N19
+A1L190 = OUTPUT_BUFFER.O(.I(result_sig[2]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[2] is result[2] at PIN_AE7
+result[2] = OUTPUT();
+
+
+--A1L192 is result[3]~output at IOOBUF_X28_Y0_N53
+A1L192 = OUTPUT_BUFFER.O(.I(result_sig[3]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[3] is result[3] at PIN_AK8
+result[3] = OUTPUT();
+
+
+--A1L194 is result[4]~output at IOOBUF_X18_Y0_N93
+A1L194 = OUTPUT_BUFFER.O(.I(result_sig[4]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[4] is result[4] at PIN_AH9
+result[4] = OUTPUT();
+
+
+--A1L196 is result[5]~output at IOOBUF_X18_Y0_N42
+A1L196 = OUTPUT_BUFFER.O(.I(result_sig[5]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[5] is result[5] at PIN_AF11
+result[5] = OUTPUT();
+
+
+--A1L198 is result[6]~output at IOOBUF_X14_Y0_N19
+A1L198 = OUTPUT_BUFFER.O(.I(result_sig[6]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[6] is result[6] at PIN_AJ2
+result[6] = OUTPUT();
+
+
+--A1L200 is result[7]~output at IOOBUF_X14_Y0_N36
+A1L200 = OUTPUT_BUFFER.O(.I(result_sig[7]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[7] is result[7] at PIN_AG5
+result[7] = OUTPUT();
+
+
+--A1L202 is result[8]~output at IOOBUF_X22_Y0_N2
+A1L202 = OUTPUT_BUFFER.O(.I(result_sig[8]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[8] is result[8] at PIN_AE13
+result[8] = OUTPUT();
+
+
+--A1L204 is result[9]~output at IOOBUF_X14_Y0_N53
+A1L204 = OUTPUT_BUFFER.O(.I(result_sig[9]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[9] is result[9] at PIN_AH5
+result[9] = OUTPUT();
+
+
+--A1L206 is result[10]~output at IOOBUF_X18_Y0_N76
+A1L206 = OUTPUT_BUFFER.O(.I(result_sig[10]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[10] is result[10] at PIN_AG10
+result[10] = OUTPUT();
+
+
+--A1L208 is result[11]~output at IOOBUF_X10_Y0_N76
+A1L208 = OUTPUT_BUFFER.O(.I(result_sig[11]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[11] is result[11] at PIN_AF8
+result[11] = OUTPUT();
+
+
+--A1L210 is result[12]~output at IOOBUF_X16_Y0_N36
+A1L210 = OUTPUT_BUFFER.O(.I(result_sig[12]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[12] is result[12] at PIN_AG2
+result[12] = OUTPUT();
+
+
+--A1L212 is result[13]~output at IOOBUF_X14_Y0_N2
+A1L212 = OUTPUT_BUFFER.O(.I(result_sig[13]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[13] is result[13] at PIN_AJ1
+result[13] = OUTPUT();
+
+
+--A1L214 is result[14]~output at IOOBUF_X6_Y0_N53
+A1L214 = OUTPUT_BUFFER.O(.I(result_sig[14]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[14] is result[14] at PIN_AH4
+result[14] = OUTPUT();
+
+
+--A1L216 is result[15]~output at IOOBUF_X10_Y0_N42
+A1L216 = OUTPUT_BUFFER.O(.I(result_sig[15]), , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , );
+
+
+--result[15] is result[15] at PIN_AG1
+result[15] = OUTPUT();
+
+
+--A1L133 is CLOCK~input at IOIBUF_X89_Y25_N21
+A1L133 = INPUT_BUFFER(.I(CLOCK), );
+
+
+--CLOCK is CLOCK at PIN_Y27
+CLOCK = INPUT();
+
+
+--A1L3 is A[0]~input at IOIBUF_X8_Y0_N18
+A1L3 = INPUT_BUFFER(.I(A[0]), );
+
+
+--A[0] is A[0] at PIN_AF5
+A[0] = INPUT();
+
+
+--A1L101 is b[0]~input at IOIBUF_X12_Y0_N52
+A1L101 = INPUT_BUFFER(.I(b[0]), );
+
+
+--b[0] is b[0] at PIN_AG6
+b[0] = INPUT();
+
+
+--A1L5 is A[1]~input at IOIBUF_X22_Y0_N18
+A1L5 = INPUT_BUFFER(.I(A[1]), );
+
+
+--A[1] is A[1] at PIN_AF13
+A[1] = INPUT();
+
+
+--A1L103 is b[1]~input at IOIBUF_X12_Y0_N1
+A1L103 = INPUT_BUFFER(.I(b[1]), );
+
+
+--b[1] is b[1] at PIN_AA12
+b[1] = INPUT();
+
+
+--A1L7 is A[2]~input at IOIBUF_X20_Y0_N35
+A1L7 = INPUT_BUFFER(.I(A[2]), );
+
+
+--A[2] is A[2] at PIN_AK2
+A[2] = INPUT();
+
+
+--A1L105 is b[2]~input at IOIBUF_X12_Y0_N35
+A1L105 = INPUT_BUFFER(.I(b[2]), );
+
+
+--b[2] is b[2] at PIN_AF6
+b[2] = INPUT();
+
+
+--A1L9 is A[3]~input at IOIBUF_X24_Y0_N52
+A1L9 = INPUT_BUFFER(.I(A[3]), );
+
+
+--A[3] is A[3] at PIN_AK6
+A[3] = INPUT();
+
+
+--A1L107 is b[3]~input at IOIBUF_X12_Y0_N18
+A1L107 = INPUT_BUFFER(.I(b[3]), );
+
+
+--b[3] is b[3] at PIN_AB12
+b[3] = INPUT();
+
+
+--A1L11 is A[4]~input at IOIBUF_X6_Y0_N35
+A1L11 = INPUT_BUFFER(.I(A[4]), );
+
+
+--A[4] is A[4] at PIN_AG3
+A[4] = INPUT();
+
+
+--A1L109 is b[4]~input at IOIBUF_X8_Y0_N52
+A1L109 = INPUT_BUFFER(.I(b[4]), );
+
+
+--b[4] is b[4] at PIN_AG8
+b[4] = INPUT();
+
+
+--A1L13 is A[5]~input at IOIBUF_X24_Y0_N18
+A1L13 = INPUT_BUFFER(.I(A[5]), );
+
+
+--A[5] is A[5] at PIN_AE14
+A[5] = INPUT();
+
+
+--A1L111 is b[5]~input at IOIBUF_X20_Y0_N18
+A1L111 = INPUT_BUFFER(.I(b[5]), );
+
+
+--b[5] is b[5] at PIN_AB13
+b[5] = INPUT();
+
+
+--A1L15 is A[6]~input at IOIBUF_X8_Y0_N1
+A1L15 = INPUT_BUFFER(.I(A[6]), );
+
+
+--A[6] is A[6] at PIN_AF4
+A[6] = INPUT();
+
+
+--A1L113 is b[6]~input at IOIBUF_X8_Y0_N35
+A1L113 = INPUT_BUFFER(.I(b[6]), );
+
+
+--b[6] is b[6] at PIN_AF9
+b[6] = INPUT();
+
+
+--A1L17 is A[7]~input at IOIBUF_X24_Y0_N1
+A1L17 = INPUT_BUFFER(.I(A[7]), );
+
+
+--A[7] is A[7] at PIN_AD14
+A[7] = INPUT();
+
+
+--A1L115 is b[7]~input at IOIBUF_X4_Y0_N35
+A1L115 = INPUT_BUFFER(.I(b[7]), );
+
+
+--b[7] is b[7] at PIN_AE11
+b[7] = INPUT();
+
+
+--A1L19 is A[8]~input at IOIBUF_X26_Y0_N58
+A1L19 = INPUT_BUFFER(.I(A[8]), );
+
+
+--A[8] is A[8] at PIN_AG13
+A[8] = INPUT();
+
+
+--A1L117 is b[8]~input at IOIBUF_X20_Y0_N1
+A1L117 = INPUT_BUFFER(.I(b[8]), );
+
+
+--b[8] is b[8] at PIN_AA13
+b[8] = INPUT();
+
+
+--A1L21 is A[9]~input at IOIBUF_X16_Y0_N52
+A1L21 = INPUT_BUFFER(.I(A[9]), );
+
+
+--A[9] is A[9] at PIN_AH3
+A[9] = INPUT();
+
+
+--A1L119 is b[9]~input at IOIBUF_X10_Y0_N92
+A1L119 = INPUT_BUFFER(.I(b[9]), );
+
+
+--b[9] is b[9] at PIN_AG7
+b[9] = INPUT();
+
+
+--A1L23 is A[10]~input at IOIBUF_X20_Y0_N52
+A1L23 = INPUT_BUFFER(.I(A[10]), );
+
+
+--A[10] is A[10] at PIN_AK3
+A[10] = INPUT();
+
+
+--A1L121 is b[10]~input at IOIBUF_X22_Y0_N35
+A1L121 = INPUT_BUFFER(.I(b[10]), );
+
+
+--b[10] is b[10] at PIN_AJ4
+b[10] = INPUT();
+
+
+--A1L25 is A[11]~input at IOIBUF_X26_Y0_N41
+A1L25 = INPUT_BUFFER(.I(A[11]), );
+
+
+--A[11] is A[11] at PIN_AG12
+A[11] = INPUT();
+
+
+--A1L123 is b[11]~input at IOIBUF_X10_Y0_N58
+A1L123 = INPUT_BUFFER(.I(b[11]), );
+
+
+--b[11] is b[11] at PIN_AH2
+b[11] = INPUT();
+
+
+--A1L27 is A[12]~input at IOIBUF_X16_Y0_N1
+A1L27 = INPUT_BUFFER(.I(A[12]), );
+
+
+--A[12] is A[12] at PIN_AC12
+A[12] = INPUT();
+
+
+--A1L125 is b[12]~input at IOIBUF_X26_Y0_N92
+A1L125 = INPUT_BUFFER(.I(b[12]), );
+
+
+--b[12] is b[12] at PIN_AJ7
+b[12] = INPUT();
+
+
+--A1L29 is A[13]~input at IOIBUF_X16_Y0_N18
+A1L29 = INPUT_BUFFER(.I(A[13]), );
+
+
+--A[13] is A[13] at PIN_AD12
+A[13] = INPUT();
+
+
+--A1L127 is b[13]~input at IOIBUF_X4_Y0_N18
+A1L127 = INPUT_BUFFER(.I(b[13]), );
+
+
+--b[13] is b[13] at PIN_AD10
+b[13] = INPUT();
+
+
+--A1L31 is A[14]~input at IOIBUF_X22_Y0_N52
+A1L31 = INPUT_BUFFER(.I(A[14]), );
+
+
+--A[14] is A[14] at PIN_AK4
+A[14] = INPUT();
+
+
+--A1L129 is b[14]~input at IOIBUF_X24_Y0_N35
+A1L129 = INPUT_BUFFER(.I(b[14]), );
+
+
+--b[14] is b[14] at PIN_AJ5
+b[14] = INPUT();
+
+
+--A1L33 is A[15]~input at IOIBUF_X6_Y0_N1
+A1L33 = INPUT_BUFFER(.I(A[15]), );
+
+
+--A[15] is A[15] at PIN_AD7
+A[15] = INPUT();
+
+
+--A1L131 is b[15]~input at IOIBUF_X26_Y0_N75
+A1L131 = INPUT_BUFFER(.I(b[15]), );
+
+
+--b[15] is b[15] at PIN_AJ6
+b[15] = INPUT();
+
+
+
+--A1L134 is CLOCK~inputCLKENA0 at CLKCTRL_G10
+A1L134 = cyclonev_clkena(.INCLK = A1L133) WITH (clock_type = "Global Clock", ena_register_mode = "always enabled");
+
+
+--A1L161 is qB[0]~feeder at LABCELL_X12_Y4_N48
+A1L161 = ( A1L101 );
+
+
+--A1L164 is qB[2]~feeder at LABCELL_X12_Y4_N51
+A1L164 = ( A1L105 );
+
+
+--A1L140 is qA[3]~feeder at LABCELL_X13_Y4_N21
+A1L140 = ( A1L9 );
+
+
+--A1L166 is qB[3]~feeder at LABCELL_X12_Y4_N54
+A1L166 = ( A1L107 );
+
+
+--A1L143 is qA[5]~feeder at LABCELL_X13_Y4_N27
+A1L143 = ( A1L13 );
+
+
+--A1L169 is qB[5]~feeder at LABCELL_X13_Y4_N42
+A1L169 = ( A1L111 );
+
+
+--A1L171 is qB[6]~feeder at LABCELL_X11_Y4_N33
+A1L171 = ( A1L113 );
+
+
+--A1L149 is qA[10]~feeder at LABCELL_X13_Y4_N39
+A1L149 = ( A1L23 );
+
+
+--A1L151 is qA[11]~feeder at LABCELL_X13_Y4_N57
+A1L151 = ( A1L25 );
+
+
+--A1L178 is qB[12]~feeder at LABCELL_X13_Y4_N51
+A1L178 = ( A1L125 );
+
+
+--A1L154 is qA[13]~feeder at LABCELL_X13_Y2_N15
+A1L154 = ( A1L29 );
+
+
+--A1L156 is qA[14]~feeder at LABCELL_X13_Y4_N24
+A1L156 = ( A1L31 );
+
+
+--A1L181 is qB[14]~feeder at LABCELL_X13_Y4_N48
+A1L181 = ( A1L129 );
+
+
+--A1L158 is qA[15]~feeder at LABCELL_X11_Y4_N21
+A1L158 = ( A1L33 );
+
+
+--A1L183 is qB[15]~feeder at LABCELL_X17_Y4_N12
+A1L183 = ( A1L131 );
+
+
